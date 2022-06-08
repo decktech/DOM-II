@@ -50,7 +50,41 @@ images.forEach(element => {element.addEventListener("mouseout", hoverOff)});
 //     alert('Event Listeners!')
 // })
 
-function getFocus(evt){
-    evt.target.style.border;
-}
-pTags.forEach(element => {element.addEventListener("focus", getFocus)})
+// function getFocus(evt){
+//     evt.target.style.border = '1px';
+//     evt.target.style.borderColor = 'red';
+//     evt.target.style.color = 'red';
+// }
+// pTags.forEach(element => {element.addEventListener("focus", getFocus)})
+// pTags.forEach(element => {element.addEventListener("focus", function() {
+//     pTags.style.fontStyle = 'italic';
+//     pTags.style.color = 'red';
+// }, true)})
+//                  ?? MAYBE DOESNT WORK WITH <p> ??
+
+window.addEventListener('resize', function() {
+    console.log(`Window heigth: ${this.window.innerHeight}`);
+    console.log(`Window width: ${this.window.innerWidth}`);
+})
+
+document.addEventListener("scroll", function(){
+    console.log('You scrolled!!')
+})
+
+// pTags.forEach(element => {
+//     element.addEventListener("select", myFunction)
+// })
+
+// function myFunction(evt) {
+//     evt.target.style.color = 'white';
+//     console.log('you selected something')
+// }
+//        ?? SAME QUESTION AS ABOVE ??
+
+document.addEventListener("dblclick", function(evt){
+    if (evt.target.style.backgroundColor === ''){
+        evt.target.style.backgroundColor = 'black';
+    } else if (evt.target.style.backgroundColor === 'black') {
+        evt.target.style.backgroundColor = '';
+    }
+})
